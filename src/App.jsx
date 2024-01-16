@@ -4,12 +4,15 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Hola from '../.vite/component/saludo.jsx'
 
+
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-   <Hola name="Victor"/>
+   <Hola name="Isaac"/>
   )
 }
 
-export default App
+export default App 
+
+
