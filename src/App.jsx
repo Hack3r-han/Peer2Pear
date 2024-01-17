@@ -1,10 +1,9 @@
 import './App.css'
-import Hola from './components/saludo'
+import Hola from './componet/saludo'
 
 
 function App() {
   return (
-<<<<<<< HEAD
    <Hola name="Isaac"/>
   )
 }
@@ -12,11 +11,3 @@ function App() {
 export default App 
 
 
-=======
-    <>
-      <Hola/>
-    </>
-  )
-}
-export default App
->>>>>>> origin/feature-Max
