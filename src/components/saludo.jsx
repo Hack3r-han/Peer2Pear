@@ -1,20 +1,12 @@
-import { useState, useEffect } from 'react';
+import React from "react";
+import  Product  from "../services/movil";
 
-function useFetch(url) {
-    useEffect(() => {
-        fetch(url)
-            .then((response) => response.json())
-            .then((data) => console.log(data));
-    }, []);
-}
-
-function Hola(props) {
+function Hola() {
+    const Productsjson = Product("http://localhost:3000/products")
     return (
-        <div>
-            <h1>Hola {props.name}</h1>
-            <button onClick={useFetch("https://pokeapi.co/api/v2/pokemon")}>Fetch</button>
-            <img src={`https://pokeapi.co/api/v2/pokemon/ ${props.name}`} alt="bulasaur" />
-        </div>
+        <>
+            {/* <p>{Aqui debemos mostrar el resultado de la Api}</p> */}
+        </>
     );
 }
 export default Hola
