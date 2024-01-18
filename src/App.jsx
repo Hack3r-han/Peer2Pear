@@ -1,10 +1,14 @@
 import './App.css'
 import Hola from './components/Hola'
-
+import Card from './Page/Cards'
+import { Navbar, Footer } from './Page/layoud'
 function App() {
   return (
     <>
-      <Hola/>
+      <Navbar />
+      <Card />
+      <Footer />
+      
     </>
   )
 }
