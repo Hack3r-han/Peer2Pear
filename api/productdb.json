@@ -115,6 +115,24 @@
             "price": 10,
             "img": "https://www.cookingkneads.co.uk/wp-content/uploads/2022/05/IMG_1035-1-scaled.jpgb",
             "brand": "IKEA"   
+        },
+
+        {
+            "id": 14,
+            "title": "Flamenco Dress",
+            "description": "Step into the enchanting world of Flamenco with this exquisite dress-a celebration of the intensity, rhythm, and fiery spirit that defines this iconic dance form. Size M.",
+            "price": 30,
+            "img": "https://img.freepik.com/free-photo/elegant-woman-looking-down-with-orange-background_23-2148235392.jpg?w=900&t=st=1705589163~exp=1705589763~hmac=493e4e806cf42dd5736fe49566ecfca9e5a4aa61f9d64855fa4d8f77673d1447",
+            "brand": "Tamara Flamenco"   
+        },
+
+        {
+            "id": 15,
+            "title": "Air Fryer",
+            "description": "A kitchen marvel that harnesses the power of air to elevate your culinary experience to new heights. In a world where we all recognize the vital importance of air in sustaining life, why not let it also enhance the flavors of your favorite dishes?",
+            "price": 40,
+            "img": "https://img.freepik.com/free-photo/close-up-tasty-fried-food-croquettes_23-2149202623.jpg?w=826&t=st=1705589563~exp=1705590163~hmac=fc79c17382b571b32b67a64adaf6f2ced2b80852a6a067ffed4090254623bd7e",
+            "brand": "Cecotec"   
         }
 
     ]
