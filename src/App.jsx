@@ -1,12 +1,12 @@
 import './App.css'
-import Hola from './components/Hola'
-import Card from './Page/Cards'
+import  Card  from './components/Cards'
 import { Navbar, Footer } from './Page/layoud'
 function App() {
   return (
     <>
       <Navbar />
-      <Card />
+      <Card title="iPhone" price="$40" description="An apple mobile which is nothing like apple" />
+      <Card title="Zapato" price="$70" description="de Cuero" />
       <Footer />
       
     </>
