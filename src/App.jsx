@@ -1,5 +1,5 @@
-import './App.css'
-import Hola from './componet/saludo'
+import "./App.css"
+import Hola from "./componet/Hola"
 
 
 function App() {
