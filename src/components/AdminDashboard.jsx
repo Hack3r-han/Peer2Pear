@@ -5,17 +5,17 @@ import { productService } from '../services/productService';
 const AdminDashboard = () => {
   const [products, setProducts] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await productService.getProducts();
-        setProducts(data || []);
-      } catch (error) {
-        // Handle error as needed
-      }
-    };
+  const fetchData = async () => {
+    try {
+      const data = await productService.getProducts();
+      setProducts(data);
+    } catch (error) {
+      // Handle error as needed
+    }
+  };
 
-    fetchData();
+  useEffect(() => {
+      fetchData();
   }, []);
 
   const handleDelete = async (productId) => {
