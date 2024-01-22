@@ -1,7 +1,6 @@
-.container-fluid{
-    background-color: white;
-}
  
 #logo{
     width: 100px;
+    height: 50px;
+    border-radius: 10px;
 }

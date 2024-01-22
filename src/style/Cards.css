@@ -11,3 +11,9 @@ h6{
     background-color: #FF8200;
     color: white;
 }
+
+.card-img-top{
+    width: 100%;
+    height: 200px;
+    
+}

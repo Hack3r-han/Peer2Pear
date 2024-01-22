@@ -1,20 +1,21 @@
-import getProducts from "../services/productService";
 import "../style/Cards.css";
-import Addbtn from "./Button";
+import { Addbtn, Iconbtn } from "./Button";
 
 
 
-function Card(props) {
+function Card({props}) {
     return (
-        <div class="row row-cols-1 row-cols-md-3 g-4 m-0 d-inline-flex align-items-baseline" >
+        <div class="m-1 mt-5 ">
         <div class="col">
-                <div class="card h-100">
-                    {/* <img src={products.img} class="card-img-top" alt="..."/> */}
+                <div class="card h-200">
+                    <img src={props.img} class="card-img-top " alt="..."/>
                         <div class="card-body">
-                        <h5 class="card-title">{props.title}</h5>
-                        <h6>{props.price}</h6>
-                        <p class="card-text">{props.description}</p>
-                        <Addbtn btnName="Comprar"/>
+                        <h5 class="card-title d-inline ">{props.title}</h5>
+                        <h6>{props.price}$</h6>
+                        <div class="d-flex justify-content-between">
+                            <Addbtn btnName="Comprar" />
+                            <Iconbtn btnName="add_shopping_cart" />
+                        </div>
                     </div>
                 </div>
             </div>

@@ -101,7 +101,7 @@
       "title": "Handy Tongs",
       "description": "Ever feel like you need an extra pair of hands in the kitchen? Say goodbye to ordinary tongs. These tongs feature miniature hands at the tips, ready to assist you in flipping pancakes, serving salads, or grasping hot items from the grill.",
       "price": 10,
-      "img": "https://www.cookingkneads.co.uk/wp-content/uploads/2022/05/IMG_1035-1-scaled.jpgb",
+      "img": "https://i.etsystatic.com/20074123/r/il/c1c1b5/4849478532/il_1588xN.4849478532_nrwc.jpg",
       "brand": "IKEA"
     },
     {
@@ -119,30 +119,7 @@
       "price": 40,
       "img": "https://img.freepik.com/free-photo/close-up-tasty-fried-food-croquettes_23-2149202623.jpg?w=826&t=st=1705589563~exp=1705590163~hmac=fc79c17382b571b32b67a64adaf6f2ced2b80852a6a067ffed4090254623bd7e",
       "brand": "Cecotec"
-    },
-    {
-      "id": 16
-    },
-    {
-      "id": 17
-    },
-    {
-      "id": 18
-    },
-    {
-      "id": 19
-    },
-    {
-      "id": 20
-    },
-    {
-      "id": 21
-    },
-    {
-      "id": 22
-    },
-    {
-      "id": 23
     }
+   
   ]
 }
