@@ -1,11 +1,13 @@
-import './App.css'
-import Hola from './components/Hola'
+import React, { useState, useEffect } from 'react';
+import AdminDashboard from './components/AdminDashboard';
+import './App.css';
 
 function App() {
   return (
     <>
-      <Hola/>
+      <AdminDashboard />
     </>
-  )
+  );
 }
-export default App
+
+export default App;
