@@ -1,8 +1,13 @@
-
 .col{
-    margin: 20px;
+    width: 250px;
+    height: 250px;
 }
 
-.shop-link{
-    margin-right: 100%;
+h6{
+    color:#FF8200 ;
+}
+
+.btn{
+    background-color: #FF8200;
+    color: white;
 }
