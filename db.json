@@ -1,22 +1,31 @@
 {
-    "products":[
-        {
-            "name": "Samsung Galaxy 15f",
-            "brand": "Samsung",
-            "category": "Phones",
-            "price":"480",
-            "description": "Smartphone",
-            "createdAt": "2023-03-07",
-            "id": 1
-        },
-        {
-            "name": "Nokia x350",
-            "brand": "Nokia",
-            "category": "Phones",
-            "price":"211",
-            "description": "Smartphone",
-            "createdAt": "2023-03-07",
-            "id": 2
-        }
-    ]
+  "products": [
+    {
+      "name": "Samsung Galaxy 15f",
+      "brand": "Samsung",
+      "category": "Phones",
+      "price": "980",
+      "description": "Smartphone",
+      "createdAt": "2023-03-07",
+      "id": "1"
+    },
+    {
+      "name": "Nokia x350",
+      "brand": "Nokia",
+      "category": "Phones",
+      "price": "211",
+      "description": "Smartphone",
+      "createdAt": "2023-03-07",
+      "id": "2"
+    },
+    {
+      "id": "9228",
+      "name": "sdfsdf",
+      "brand": "sfsdf",
+      "category": "Other",
+      "price": "sfdfsdf",
+      "description": "sdfsdfsd",
+      "createdAt": "2024-01-23"
+    }
+  ]
 }
