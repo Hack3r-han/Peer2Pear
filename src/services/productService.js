@@ -13,18 +13,23 @@ export const productService = {
 
   deleteProduct: async (productId) => {
     try {
-      const response = await fetch('http://localhost:3001/products');
-      const data = await response.json();
-      const currentProducts = data.products;
-
-      const updatedProducts = currentProducts.filter((product) => product.id !== productId);
-
-      await fetch('http://localhost:3001/products', {
-        method: 'PUT',
+      await fetch(`http://localhost:3001/products/${productId}`, {
+        method: 'DELETE',
         headers: {
-          'Content-Type': 'application/json', //specifies that the content being sent in the request body is in JSON format
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ products: updatedProducts }),
+      // const response = await fetch('http://localhost:3001/products');
+      // const data = await response.json();
+      // const currentProducts = data.products;
+
+      // const updatedProducts = currentProducts.filter((product) => product.id !== productId);
+
+      // await fetch('http://localhost:3001/products', {
+      //   method: 'PUT',
+      //   headers: {
+      //     'Content-Type': 'application/json', 
+      //   },
+      //   body: JSON.stringify({ products: updatedProducts }),
       });
     } catch (error) {
       console.error(`Error deleting product with ID ${productId}:`, error);
