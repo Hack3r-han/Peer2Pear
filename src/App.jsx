@@ -6,7 +6,9 @@ function App() {
   return (
     <>
       <Navbar />
-      <ProductList/>
+      <section className='container'>
+        <ProductList />
+      </section>
       <Footer />
     </>
   )

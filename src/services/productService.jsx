@@ -26,6 +26,8 @@ export const ProductList = () => {
         }
     };
 
+    
+
     useEffect(() => {
         fetchProducts();
     }, []);
@@ -33,7 +35,7 @@ export const ProductList = () => {
     return (
     <>
             {product.map(products => (
-                <div class="row row-cols-1 row-cols-md-3 g-2 m-4 d-inline-flex align-items-baseline" key={products.id}>
+                <div class="row row-cols-1 row-cols-md-3 g- m-4 d-inline-flex align-items-baseline" key={products.id}>
                     <Card props={products} />
                 </div>
             ))}
