@@ -87,7 +87,7 @@ function ProductList (props) {
                                 <td>{product.title}</td>
                                 <td>{product.description}</td>
                                 <td>{product.price}</td>
-                                <td>{product.img}</td>
+                                <td><img className="w-25 h-25" src={product.img}></img></td>
                                 <td>{product.brand}</td>
                                 <td>{product.createAt}</td>
                                 <td style={{width: "10px", whiteSpace: "nowrap"}}>
@@ -222,10 +222,10 @@ function ProductForm (props) {
                                 name="category"
                                 defaultValue={props.product.category} > 
 
-                                <option value="Other">Other</option>
+                                <option value="Others">Others</option>
                                 <option value="Phones">Phones</option>
                                 <option value="Computers">Computers</option>
-                                <option value="Accesories"></option>
+                                <option value="Accesories"> Accesories</option>
                                 <option value="GPS">GPS</option>
                                 <option value="Cameras">Cameras</option>
                             </select>
