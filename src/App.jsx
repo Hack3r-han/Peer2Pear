@@ -1,8 +1,8 @@
 
 import './App.css'
-import { Navbar, Footer } from './pages/layout'
-import { Home } from './pages/home'
-import { Products } from './pages/products'
+import { Navbar, Footer } from './Page/Layout'
+import { Home } from './Page/Home'
+import { Products } from './Page/Products'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 function App() {
   return(
