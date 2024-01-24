@@ -1,24 +1,24 @@
 export const Description = ({props}) => {
 return(
     <div>
-        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target={`#modal${props.id}`}>
+        <button type="button" className="btn btn-info" data-bs-toggle="modal" data-bs-target={`#modal${props.id}`}>
             Description
         </button>
         
-        <div class="modal fade" id={`modal${props.id}`} tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="modalLabel">{props.title}</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div className="modal fade" id={`modal${props.id}`} tabIndex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+            <div className="modal-dialog">
+                <div className="modal-content">
+                    <div className="modal-header">
+                        <h1 className="modal-title fs-5" id="modalLabel">{props.title}</h1>
+                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body">
-                        <img src={props.img} class="img-fluid" alt="..."/>
+                    <div className="modal-body">
+                        <img src={props.img} className="img-fluid rounded " alt="..."/>
                         {props.description}
                         <h6>{props.price}$</h6>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <div className="modal-footer">
+                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
