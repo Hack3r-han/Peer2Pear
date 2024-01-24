@@ -1,14 +1,14 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import Hola from './components/saludo.jsx'
-
+import  Card  from './components/Cards'
+import { Navbar, Footer } from './Page/layoud'
+import {ProductList} from './services/productService'
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <Hola name="Victor" />
+    <>
+      <Navbar />
+      <ProductList/>
+      <Footer />
+    </>
   )
 }
 export default App
