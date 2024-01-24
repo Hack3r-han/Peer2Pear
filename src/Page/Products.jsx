@@ -8,8 +8,8 @@ export function Products() {
         setContent(<ProductList showForm={showForm} />);
     }
 
-    function showForm() {
-        setContent(<ProductForm showList={showList} />);
+    function showForm(product) {
+        setContent(<ProductForm product={product} showList={showList} />);
     }
 
     return (
@@ -44,15 +44,31 @@ function ProductList (props) {
     //fetchProducts();
     useEffect(() => fetchProducts(), []);
 
+    function deleteProduct(id) {
+        fetch("http://localhost:3000/products/" + id, {
+            method: "DELETE",
+        })
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error("Unexpected Server Response")
+            }
+            return response.json()
+        })
+        .then((data) => {
+            fetchProducts();
+        })
+        .catch((error) => console.log("Error: ",error));
+    }
+
     return ( 
         <>
         <h2 className="text-center mb-3">List of Products</h2>
-        <button onClick={() => props.showForm() }type="button" className="btn btn-outline-warning mb-3">Create</button>
+        <button onClick={() => props.showForm({}) }type="button" className="btn btn-outline-warning mb-3">Create</button>
         <button onClick={() => fetchProducts() }type="button" className="btn btn-outline-warning mb-3">Refresh</button>
         <table className="table">
             <thead>
                 <tr>
-                    <th>id</th>
+                    
                     <th>title</th>
                     <th>description</th>
                     <th>price</th>
@@ -67,7 +83,7 @@ function ProductList (props) {
                         return ( 
                             <tr key={index}>
 
-                                <td>{product.id}</td>
+                                
                                 <td>{product.title}</td>
                                 <td>{product.description}</td>
                                 <td>{product.price}</td>
@@ -75,8 +91,8 @@ function ProductList (props) {
                                 <td>{product.brand}</td>
                                 <td>{product.createAt}</td>
                                 <td style={{width: "10px", whiteSpace: "nowrap"}}>
-                                    <button type="button" className="btn btn-outline-warning mb-3">Edit</button>
-                                    <button type="button" className="btn btn-outline-warning mb-3">Delete</button>
+                                    <button onClick={() => props.showForm(product)} type="button" className="btn btn-outline-warning mb-3">Edit</button>
+                                    <button onClick={() => deleteProduct(product.id)} type="button" className="btn btn-outline-warning mb-3">Delete</button>
                                 </td>
 
                             </tr>  
@@ -90,20 +106,103 @@ function ProductList (props) {
 }
 
 function ProductForm (props) {
+    const [errorMessage, setErrorMessage] = useState("");
+
+    function handleSubmit(event) {
+        event.preventDefault();
+     
+        //read form data
+        const formData = new FormData(event.target);
+
+        // convert form Daata to object
+        const product = Object.fromEntries(formData.entries());
+
+        // form validation
+        if (!product.title || !product.brand || !product.category || !product.price) {
+            console.log("Please fill all the fields");
+            setErrorMessage(
+                <div class="alert alert-warning" role="alert">
+                    Please fill all the fields
+                </div>
+            )
+            return;
+        }
+    
+        if (props.product.id) {
+            // update the product
+            fetch("http://localhost:3000/products/" + props.product.id, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(product)
+
+            })
+                .then((response) => {
+                    if (!response.ok) {
+                    throw new Error("Network response was not OK");
+                    }
+                    return response.json()
+            
+                })
+                .then((data) => props.showList())
+                .catch((error) => {
+                console.log("Error: ", error);
+                });
+        }
+        else {
+        
+        // create a new product
+        product.createdAt = new Date().toISOString().slice(0, 10);
+        fetch("http://localhost:3000/products", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(product)
+
+        })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error("Network response was not OK");
+                }
+                return response.json()
+            
+            })
+            .then((data) => props.showList())
+            .catch((error) => {
+                console.log("Error: ", error);
+            });
+        }
+    }
+      
     return ( 
         <>
-        <h2 className="text-center mb-3">Create new Product</h2>
+        <h2 className="text-center mb-3">{props.product.id ? "Edit Product" : "Create New Product"}</h2>
         
 
         <div className="row">
             <div className="col-lg-6 mx-auto">
-                <form>
+
+
+                {errorMessage}
+
+                <form onSubmit={(event) => handleSubmit(event)}>
+                    {props.product.id && <div className="row mb-3">
+                        <label className="col-sm-4 col-form-label">ID</label>
+                        <div className="col-sm-8">
+                            <input readOnly className="form-control-plaintext"
+                                name="id"
+                                defaultValue={props.product.id} />
+                        </div>
+                    </div>}
+
                     <div className="row mb-3">
-                        <label className="col-sm-4 col-form-label">Name</label>
+                        <label className="col-sm-4 col-form-label">title</label>
                         <div className="col-sm-8">
                             <input className="form-control"
-                                name="name"
-                                defaultValue="" />
+                                name="title"
+                                defaultValue={props.product.title} />
                         </div>
                     </div>
 
@@ -112,7 +211,7 @@ function ProductForm (props) {
                         <div className="col-sm-8">
                             <input className="form-control"
                                 name="brand"
-                                defaultValue="" />
+                                defaultValue={props.product.brand}  />
                         </div>
                     </div>
 
@@ -121,7 +220,7 @@ function ProductForm (props) {
                         <div className="col-sm-8">
                             <select className="form-select"
                                 name="category"
-                                defaultValue=""> 
+                                defaultValue={props.product.category} > 
 
                                 <option value="Other">Other</option>
                                 <option value="Phones">Phones</option>
@@ -139,7 +238,7 @@ function ProductForm (props) {
                         <div className="col-sm-8">
                             <input className="form-control"
                                 name="price"
-                                defaultValue="" />
+                                defaultValue={props.product.price} />
                         </div>
                     </div>
 
@@ -148,7 +247,7 @@ function ProductForm (props) {
                         <div className="col-sm-8">
                             <textarea className="form-control"
                                 name="description"
-                                defaultValue="" />
+                                defaultValue={props.product.description}  />
                         </div>
                     </div>
 

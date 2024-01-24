@@ -1,22 +1,6 @@
 {
   "products": [
     {
-      "id": 1,
-      "title": "Cowboy Boots",
-      "description": "Pair these outlaw boots with your favorite jeans, a worn-in hat, and a leather jacket for an ensemble that exudes Western charisma. Whether you're in a honky-tonk or blazing your own trail, these boots are your partner in crime. Size 9.",
-      "price": 1435,
-      "img": "https://img.freepik.com/free-photo/cowboy-inspiration-with-boots-chair_23-2149484732.jpg?w=826&t=st=1705568555~exp=1705569155~hmac=0b17fe38c210a44a615e6ca1529140efb1c3809681e7d1f7de7e1ae652c2544b",
-      "brand": "Tecovas"
-    },
-    {
-      "id": 2,
-      "title": "Woolen Jumper",
-      "description": "Cozy and stylish woolen jumper to keep you warm during chilly seasons. This garment seamlessly combines comfort and fashion, making it a must-have addition to your winter wardrobe. Size S.",
-      "price": 15,
-      "img": "https://img.freepik.com/premium-photo/sweater-isolated-white_87394-14018.jpg?w=900",
-      "brand": "UNIQLO"
-    },
-    {
       "id": 3,
       "title": "Watermelon Cooler",
       "description": "Designed to keep the essence of summer always at your fingertips. This innovative fridge is not just a cooling appliance; it's a testament to convenience, ensuring that the crisp, refreshing taste of chilled watermelon is available whenever and wherever you desire.",
@@ -119,7 +103,15 @@
       "price": 40,
       "img": "https://img.freepik.com/free-photo/close-up-tasty-fried-food-croquettes_23-2149202623.jpg?w=826&t=st=1705589563~exp=1705590163~hmac=fc79c17382b571b32b67a64adaf6f2ced2b80852a6a067ffed4090254623bd7e",
       "brand": "Cecotec"
+    },
+    {
+      "title": "Jersey",
+      "brand": "Channel",
+      "category": "Other",
+      "price": "8000€",
+      "description": "the perfect Jersey to go out wuth your friens a posturing in instagram ",
+      "createdAt": "2024-01-24",
+      "id": 18
     }
-   
   ]
 }
