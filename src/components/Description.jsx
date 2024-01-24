@@ -3,30 +3,30 @@ export const Description = ({props}) => {
 return(
     <div>
 
-        /* boton activa el modal. info: boton azul boostrap, target: el modal con el id del producto*/
+        {/* boton activa el modal. info: boton azul boostrap, target: el modal con el id del producto*/}
         <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target={`#modal${props.id}`}>
             Description
         </button>
         
-        /* Pinta Modal*/
+        {/* Pinta Modal*/}
         <div class="modal fade" id={`modal${props.id}`} tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
 
-                    /*Header del modal*/
+                    {/*Header del modal*/}
                     <div class="modal-header">
                         <h1 class="modal-title fs-5" id="modalLabel">{props.title}</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
 
-                    /*Body del modal*/
+                    {/*Body del modal*/}
                     <div class="modal-body">
                         <img src={props.img} class="img-fluid" alt="..."/>
                         {props.description}
                         <h6>{props.price}$</h6>
                     </div>
 
-                    /*footer del modal*/
+                    {/*footer del modal*/}
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     </div>
