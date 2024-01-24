@@ -57,3 +57,7 @@ nav ul {
 .read-the-docs {
   color: #888;
 }
+
+* {
+  font-family: 'Cuprum', sans-serif;
+}
