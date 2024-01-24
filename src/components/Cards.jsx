@@ -1,5 +1,6 @@
 import "../style/Cards.css";
 import { Addbtn, Iconbtn } from "./Button";
+import { Description } from "./Description";
 
 
 
@@ -14,6 +15,7 @@ function Card({props}) {
                         <h6>{props.price}$</h6>
                         <div class="d-flex justify-content-between">
                             <Addbtn btnName="Comprar" />
+                            <Description props={props}/>                            
                             <Iconbtn btnName="add_shopping_cart" />
                         </div>
                     </div>
