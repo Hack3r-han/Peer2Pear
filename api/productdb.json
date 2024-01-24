@@ -1,14 +1,6 @@
 {
   "products": [
     {
-      "id": 3,
-      "title": "Watermelon Cooler",
-      "description": "Designed to keep the essence of summer always at your fingertips. This innovative fridge is not just a cooling appliance; it's a testament to convenience, ensuring that the crisp, refreshing taste of chilled watermelon is available whenever and wherever you desire.",
-      "price": 20,
-      "img": "https://i.gzn.jp/img/2010/07/29/marugoto_tamachan/P1210050.jpg",
-      "brand": "Dyson"
-    },
-    {
       "id": 4,
       "title": "One-Sheet Wonder",
       "description": "Introducing our revolutionary Quantum Absorbency Toilet Roll—an unparalleled breakthrough in bathroom innovation. With an extreme absorbing power that defies expectations, this toilet roll is engineered to redefine your bathroom experience.",
