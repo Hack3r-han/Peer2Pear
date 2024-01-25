@@ -1,21 +1,43 @@
-# React + Vite
+# Simple E-Commerce Admin Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to eCollectic, where ordinary shopping takes a back seat and a world of eclectic wonders unfolds before your eyes! We take pride in offering an unparalleled range of cutting-edge products. Do you have a burning need for a handsome pair of cowboy boots? Are you tired of bathing in the sun’s golden rays only to find that your watermelon is now lukewarm? How ever will you refresh yourself? What a disaster. At eCollectic, you can find the solutions you're looking for. Whatever your heart desires, eCollectic can do it.
 
-Currently, two official plugins are available:
+This repository shows the Admin Dashboard for our E-Commerce site where administrators can manage products efficiently.
 
-## use
+## Features
 
-```git bash
-// download dependencies
-npm i
+- **Product Management:**
+  - Add, edit, and delete products.
+  - Upload product images and set details.
 
-// start project
-npm ruv dev
+## Getting Started
 
-// run server
-npm run server
-```
+### Prerequisites
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Ensure you have Node.js and npm installed.
+
+### Installation
+```shell
+
+1. Clone the repository:
+
+https://github.com/Hack3r-han/eCollectic.git 
+
+2. Navigate to the project directory:
+
+cd eCollectic
+
+3. Install dependencies: 
+
+npm install
+
+4. Start json server by executing the following command:
+
+npm rum server
+
+5. To start the Vite development server after installing dependencies, you can use the following command:
+
+npm run dev
+
+
+``
