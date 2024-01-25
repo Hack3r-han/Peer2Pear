@@ -1,7 +1,7 @@
 export const Description = ({props}) => {
 return(
     <div>
-        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target={`#modal${props.id}`}>
+        <button type="button" class="btn btn-info btn-sm mr-2" data-bs-toggle="modal" data-bs-target={`#modal${props.id}`}>
             Description
         </button>
         

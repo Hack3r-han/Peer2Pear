@@ -63,9 +63,9 @@ function ProductList (props) {
     return ( 
         <>
         <h2 className="text-center mb-3">List of Products</h2>
-        <button onClick={() => props.showForm({}) }type="button" className="btn btn-outline-warning mb-3">Create</button>
-        <button onClick={() => fetchProducts() }type="button" className="btn btn-outline-warning mb-3">Refresh</button>
-        <table className="table">
+        <button onClick={() => props.showForm({}) }type="button" className="btn btn-primary m-1 btn-lg ">Create</button>
+        <button onClick={() => fetchProducts() }type="button" className="btn btn-outline-secondary m-1 btn-lg  ">Refresh</button>
+        <table className="table table-hover">
             <thead>
                 <tr>
                     
@@ -91,8 +91,8 @@ function ProductList (props) {
                                 <td>{product.brand}</td>
                                 <td>{product.createAt}</td>
                                 <td style={{width: "10px", whiteSpace: "nowrap"}}>
-                                    <button onClick={() => props.showForm(product)} type="button" className="btn btn-outline-warning mb-3">Edit</button>
-                                    <button onClick={() => deleteProduct(product.id)} type="button" className="btn btn-outline-warning mb-3">Delete</button>
+                                    <button onClick={() => props.showForm(product)} type="button" className="btn btn-outline-dark m-1 ">Edit</button>
+                                    <button onClick={() => deleteProduct(product.id)} type="button" className="btn btn-outline-danger m-1">Delete</button>
                                 </td>
 
                             </tr>  
@@ -105,7 +105,7 @@ function ProductList (props) {
     );
 }
 
-function ProductForm (props) {
+function ProductForm(props) {
     const [errorMessage, setErrorMessage] = useState("");
 
     function handleSubmit(event) {
@@ -140,129 +140,131 @@ function ProductForm (props) {
             })
                 .then((response) => {
                     if (!response.ok) {
-                    throw new Error("Network response was not OK");
+                        throw new Error("Network response was not OK");
                     }
                     return response.json()
             
                 })
                 .then((data) => props.showList())
                 .catch((error) => {
-                console.log("Error: ", error);
+                    console.log("Error: ", error);
                 });
         }
         else {
         
-        // create a new product
-        product.createdAt = new Date().toISOString().slice(0, 10);
-        fetch("http://localhost:3000/products", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(product)
+            // create a new product
+            product.createdAt = new Date().toISOString().slice(0, 10);
+            fetch("http://localhost:3000/products", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(product)
 
-        })
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error("Network response was not OK");
-                }
-                return response.json()
-            
             })
-            .then((data) => props.showList())
-            .catch((error) => {
-                console.log("Error: ", error);
-            });
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error("Network response was not OK");
+                    }
+                    return response.json()
+            
+                })
+                .then((data) => props.showList())
+                .catch((error) => {
+                    console.log("Error: ", error);
+                });
         }
     }
+
+
       
-    return ( 
-        <>
-        <h2 className="text-center mb-3">{props.product.id ? "Edit Product" : "Create New Product"}</h2>
+        return (
+            <>
+                <h2 className="text-center mb-3">{props.product.id ? "Edit Product" : "Create New Product"}</h2>
         
 
-        <div className="row">
-            <div className="col-lg-6 mx-auto">
+                <div className="row">
+                    <div className="col-lg-6 mx-auto">
 
 
-                {errorMessage}
+                        {errorMessage}
 
-                <form onSubmit={(event) => handleSubmit(event)}>
-                    {props.product.id && <div className="row mb-3">
-                        <label className="col-sm-4 col-form-label">ID</label>
-                        <div className="col-sm-8">
-                            <input readOnly className="form-control-plaintext"
-                                name="id"
-                                defaultValue={props.product.id} />
-                        </div>
-                    </div>}
+                        <form onSubmit={(event) => handleSubmit(event)}>
+                            {props.product.id && <div className="row mb-3">
+                                <label className="col-sm-4 col-form-label">ID</label>
+                                <div className="col-sm-8">
+                                    <input readOnly className="form-control-plaintext"
+                                        name="id"
+                                        defaultValue={props.product.id} />
+                                </div>
+                            </div>}
 
-                    <div className="row mb-3">
-                        <label className="col-sm-4 col-form-label">title</label>
-                        <div className="col-sm-8">
-                            <input className="form-control"
-                                name="title"
-                                defaultValue={props.product.title} />
-                        </div>
-                    </div>
+                            <div className="row mb-3">
+                                <label className="col-sm-4 col-form-label">title</label>
+                                <div className="col-sm-8">
+                                    <input className="form-control"
+                                        name="title"
+                                        defaultValue={props.product.title} />
+                                </div>
+                            </div>
 
-                    <div className="row mb-3">
-                        <label className="col-sm-4 col-form-label">Brand</label>
-                        <div className="col-sm-8">
-                            <input className="form-control"
-                                name="brand"
-                                defaultValue={props.product.brand}  />
-                        </div>
-                    </div>
+                            <div className="row mb-3">
+                                <label className="col-sm-4 col-form-label">Brand</label>
+                                <div className="col-sm-8">
+                                    <input className="form-control"
+                                        name="brand"
+                                        defaultValue={props.product.brand} />
+                                </div>
+                            </div>
 
-                    <div className="row mb-3">
-                        <label className="col-sm-4 col-form-label">Category</label>
-                        <div className="col-sm-8">
-                            <select className="form-select"
-                                name="category"
-                                defaultValue={props.product.category} > 
+                            <div className="row mb-3">
+                                <label className="col-sm-4 col-form-label">Category</label>
+                                <div className="col-sm-8">
+                                    <select className="form-select"
+                                        name="category"
+                                        defaultValue={props.product.category} >
 
-                                <option value="Others">Others</option>
-                                <option value="Phones">Phones</option>
-                                <option value="Computers">Computers</option>
-                                <option value="Accesories"> Accesories</option>
-                                <option value="GPS">GPS</option>
-                                <option value="Cameras">Cameras</option>
-                            </select>
+                                        <option value="Others">Others</option>
+                                        <option value="Phones">Phones</option>
+                                        <option value="Computers">Computers</option>
+                                        <option value="Accesories"> Accesories</option>
+                                        <option value="GPS">GPS</option>
+                                        <option value="Cameras">Cameras</option>
+                                    </select>
 
-                        </div>
-                    </div>
+                                </div>
+                            </div>
 
-                    <div className="row mb-3">
-                        <label className="col-sm-4 col-form-label">Price</label>
-                        <div className="col-sm-8">
-                            <input className="form-control"
-                                name="price"
-                                defaultValue={props.product.price} />
-                        </div>
-                    </div>
+                            <div className="row mb-3">
+                                <label className="col-sm-4 col-form-label">Price</label>
+                                <div className="col-sm-8">
+                                    <input className="form-control"
+                                        name="price"
+                                        defaultValue={props.product.price} />
+                                </div>
+                            </div>
 
-                    <div className="row mb-3">
-                        <label className="col-sm-4 col-form-label">Description</label>
-                        <div className="col-sm-8">
-                            <textarea className="form-control"
-                                name="description"
-                                defaultValue={props.product.description}  />
-                        </div>
-                    </div>
+                            <div className="row mb-3">
+                                <label className="col-sm-4 col-form-label">Description</label>
+                                <div className="col-sm-8">
+                                    <textarea className="form-control"
+                                        name="description"
+                                        defaultValue={props.product.description} />
+                                </div>
+                            </div>
 
-                    <div className="row">
-                        <div className="offset-sm-4 col-sm-4 d-grid">
-                            <button type="submit" className="btn btn-outline-warning mb-3">Save</button>
-                        </div>
-                        <div className="col-sm-4 d-grid">
-                        <button onClick={() => props.showList()} type="button" className="btn btn-outline-warning mb-3">Cancel</button>
-                        </div>
+                            <div className="row">
+                                <div className="offset-sm-4 col-sm-4 d-grid">
+                                    <button type="submit" className="btn btn-outline-warning mb-3">Save</button>
+                                </div>
+                                <div className="col-sm-4 d-grid">
+                                    <button onClick={() => props.showList()} type="button" className="btn btn-outline-warning mb-3">Cancel</button>
+                                </div>
                         
+                            </div>
+                        </form>
                     </div>
-                </form>
-            </div>
-        </div>
-        </>
-    );
-} 
+                </div>
+            </>
+        );
+    }
