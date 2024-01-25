@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 
 
+
 export function Products() {
     const [ content, setContent ] = useState(<ProductList showForm={showForm} />);
 
@@ -117,6 +118,19 @@ function ProductForm (props) {
         // convert form Daata to object
         const product = Object.fromEntries(formData.entries());
 
+        // convert Base 64 image to file
+        const convertBase64=(file)=>{
+            Array.from(file).forEach((file)=>{
+               let reader = new FileReader();
+               reader.readAsDataURL(file);
+               reader.onload = ()=>{
+                   let base64String = reader.result;
+                   console.log(base64String);
+               }
+            })
+        }
+        
+
         // form validation
         if (!product.title || !product.brand || !product.category || !product.price) {
             console.log("Please fill all the fields");
@@ -151,6 +165,8 @@ function ProductForm (props) {
                 });
         }
         else {
+
+        
         
         // create a new product
         product.createdAt = new Date().toISOString().slice(0, 10);
@@ -251,6 +267,11 @@ function ProductForm (props) {
                         </div>
                     </div>
 
+                    <div className="convertBase64">
+                        <input type="file" multiple onChange={(e) => convertBase64(e.target.files)}/>
+                       
+                    </div>
+
                     <div className="row">
                         <div className="offset-sm-4 col-sm-4 d-grid">
                             <button type="submit" className="btn btn-outline-warning mb-3">Save</button>
@@ -260,6 +281,7 @@ function ProductForm (props) {
                         </div>
                         
                     </div>
+                    
                 </form>
             </div>
         </div>

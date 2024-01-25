@@ -17,3 +17,10 @@ h6{
     height: 200px;
     
 }
+
+.card {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 0,5em;
+}

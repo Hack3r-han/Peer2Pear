@@ -95,6 +95,16 @@
       "price": 40,
       "img": "https://img.freepik.com/free-photo/close-up-tasty-fried-food-croquettes_23-2149202623.jpg?w=826&t=st=1705589563~exp=1705590163~hmac=fc79c17382b571b32b67a64adaf6f2ced2b80852a6a067ffed4090254623bd7e",
       "brand": "Cecotec"
+    },
+    {
+      "title": "Patines ",
+      "brand": "Velcrox",
+      "category": "Others",
+      "price": "50€",
+      "description": "With this roller you can play with your friends",
+      "image": {},
+      "createdAt": "2024-01-25",
+      "id": 16
     }
   ]
 }

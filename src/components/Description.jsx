@@ -15,7 +15,7 @@ return(
                     <div class="modal-body">
                         <img src={props.img} class="img-fluid" alt="..."/>
                         {props.description}
-                        <h6>{props.price}$</h6>
+                        <h6>{props.price}€</h6>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
