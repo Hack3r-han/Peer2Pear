@@ -17,7 +17,7 @@ This repository shows the Admin Dashboard for our E-Commerce site where administ
 Ensure you have Node.js and npm installed.
 
 ### Installation
-```shell
+```bash
 
 1. Clone the repository:
 
