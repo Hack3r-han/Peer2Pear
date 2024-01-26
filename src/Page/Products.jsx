@@ -70,11 +70,10 @@ function ProductList (props) {
                 <tr>
                     
                     <th>title</th>
-                    <th>description</th>
                     <th>price</th>
                     <th>img</th>
                     <th>brand</th>
-                    <th>Action</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -85,9 +84,8 @@ function ProductList (props) {
 
                                 
                                 <td>{product.title}</td>
-                                <td>{product.description}</td>
                                 <td>{product.price}</td>
-                                <td><img className="w-25 h-25" src={product.img}></img></td>
+                                <td><img className="img-product" src={product.img}></img></td>
                                 <td>{product.brand}</td>
                                 <td>{product.createAt}</td>
                                 <td style={{width: "10px", whiteSpace: "nowrap"}}>
