@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react"
 
 export function Products() {
     const [ content, setContent ] = useState(<ProductList showForm={showForm} />);
+    
 
     function showList() {
         setContent(<ProductList showForm={showForm} />);
@@ -106,42 +107,52 @@ function ProductList (props) {
     );
 }
 
-function ProductForm (props) {
+function ProductForm(props) {
     const [errorMessage, setErrorMessage] = useState("");
+    const [image, setImage] = useState("");
 
-    function handleSubmit(event) {
+    // Función para convertir la imagen a base64
+    const convertToBase64 = (file, setter) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+            setter(reader.result);
+        };
+        reader.onerror = (error) => {
+            console.error('Error converting file to base64:', error);
+        };
+    };
+
+    // Función para manejar el cambio de la imagen
+    const handleImageChange = (event) => {
+        const file = event.target.files[0];
+        convertToBase64(file, setImage);
+    };
+
+    // Función para manejar el envío del formulario
+    const handleSubmit = (event) => {
         event.preventDefault();
-     
-        //read form data
+
+        // read form data
         const formData = new FormData(event.target);
 
-        // convert form Daata to object
+        // convert form data to object
         const product = Object.fromEntries(formData.entries());
 
-        // convert Base 64 image to file
-        const convertBase64=(file)=>{
-            Array.from(file).forEach((file)=>{
-               let reader = new FileReader();
-               reader.readAsDataURL(file);
-               reader.onload = ()=>{
-                   let base64String = reader.result;
-                   console.log(base64String);
-               }
-            })
-        }
-        
+        // set the image property with the base64 string
+        product.image = image;
 
         // form validation
-        if (!product.title || !product.brand || !product.category || !product.price) {
+        if (!product.title || !product.brand || !product.category || !product.price || !product.image) {
             console.log("Please fill all the fields");
             setErrorMessage(
-                <div class="alert alert-warning" role="alert">
+                <div className="alert alert-warning" role="alert">
                     Please fill all the fields
                 </div>
-            )
+            );
             return;
         }
-    
+
         if (props.product.id) {
             // update the product
             fetch("http://localhost:3000/products/" + props.product.id, {
@@ -150,47 +161,39 @@ function ProductForm (props) {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify(product)
-
             })
                 .then((response) => {
                     if (!response.ok) {
-                    throw new Error("Network response was not OK");
+                        throw new Error("Network response was not OK");
                     }
-                    return response.json()
-            
+                    return response.json();
                 })
                 .then((data) => props.showList())
                 .catch((error) => {
-                console.log("Error: ", error);
+                    console.log("Error: ", error);
+                });
+        } else {
+            // create a new product
+            product.createdAt = new Date().toISOString().slice(0, 10);
+            fetch("http://localhost:3000/products", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(product)
+            })
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error("Network response was not OK");
+                    }
+                    return response.json();
+                })
+                .then((data) => props.showList())
+                .catch((error) => {
+                    console.log("Error: ", error);
                 });
         }
-        else {
-
-        
-        
-        // create a new product
-        product.createdAt = new Date().toISOString().slice(0, 10);
-        fetch("http://localhost:3000/products", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(product)
-
-        })
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error("Network response was not OK");
-                }
-                return response.json()
-            
-            })
-            .then((data) => props.showList())
-            .catch((error) => {
-                console.log("Error: ", error);
-            });
-        }
-    }
+    };
       
     return ( 
         <>
@@ -267,9 +270,17 @@ function ProductForm (props) {
                         </div>
                     </div>
 
-                    <div className="convertBase64">
-                        <input type="file" multiple onChange={(e) => convertBase64(e.target.files)}/>
-                       
+                    <div className="row mb-3">
+                    <label className="col-sm-4 col-form-label">Image</label>
+                        <div className="col-sm-8">
+                            <input
+                                type="file"
+                                className="form-control"
+                                name="image"
+                                accept="image/*"
+                                onChange={(event) => handleImageChange(event)}
+                            />
+                       </div>
                     </div>
 
                     <div className="row">
