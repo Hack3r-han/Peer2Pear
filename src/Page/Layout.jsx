@@ -6,7 +6,7 @@ export function Navbar() {
     return (
       <nav className="navbar navbar-expand-lg position-sticky top-0" style={{backgroundColor: "#FF8200"}}>
   <div className="container">
-          <Link className="navbar-brand" to="/"><img src="../src/img/Final_Logo.png" alt="Logo" style={{
+          <Link className="navbar-brand" to="/"><img src="../src/img/Final-logo.svg" alt="Logo" style={{
             width: "150px",
           }} id="logo" /></Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
