@@ -45,7 +45,7 @@ function ProductList (props) {
     useEffect(() => fetchProducts(), []);
 
     function deleteProduct(id) {
-        fetch("https://api-e-collectic.vercel.app/products" + id, {
+        fetch("https://api-e-collectic.vercel.app/products/" + id, {
             method: "DELETE",
         })
         .then((response) => {
@@ -128,7 +128,7 @@ function ProductForm(props) {
     
         if (props.product.id) {
             // update the product
-            fetch("https://api-e-collectic.vercel.app/products" + props.product.id, {
+            fetch("https://api-e-collectic.vercel.app/products/" + props.product.id, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",
