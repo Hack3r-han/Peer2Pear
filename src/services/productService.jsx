@@ -4,7 +4,7 @@ import Card from "../components/Cards";
 const ProductService = {
     async getProducts(){
         try {
-            const response = await fetch("http://localhost:3000/products");
+            const response = await fetch("https://api-e-collectic.vercel.app/products");
             const data = await response.json();
             return data;
         } catch (error) {
