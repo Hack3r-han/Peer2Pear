@@ -17,7 +17,7 @@ function Card({props}) {
                         <div class="d-flex align-items-center">
                             <button type="button" class="btn btn-outline-success btn-sm ml-2">Comprar</button>
                             <Description props={props}/>                            
-                            <Iconbtn btnName="add_shopping_cart" />
+                            <Iconbtn btnName="add_shopping_cart " />
                         </div>
                     </div>
                 </div>
