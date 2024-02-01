@@ -1,4 +1,5 @@
 import "../style/Navbar.css"
+import Card from "../components/Cards";
 import { ProductList } from "../services/productService";
 
 import React from "react"
@@ -41,6 +42,10 @@ function Navbar() {
         </nav>
     )
 }
+
+
+
+
 function Footer() {
     return (
         <footer>
