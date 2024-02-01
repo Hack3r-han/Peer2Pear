@@ -25,7 +25,7 @@ function ProductList (props) {
 
     function fetchProducts() {
 
-            fetch("http://localhost:3000/products")
+            fetch("https://api-e-collectic.vercel.app/products")
             .then((response) => {
                 if (!response.ok) {
                     throw new Error("Unexpected Server Response")
@@ -45,7 +45,7 @@ function ProductList (props) {
     useEffect(() => fetchProducts(), []);
 
     function deleteProduct(id) {
-        fetch("http://localhost:3000/products/" + id, {
+        fetch("https://api-e-collectic.vercel.app/products/" + id, {
             method: "DELETE",
         })
         .then((response) => {
@@ -128,7 +128,7 @@ function ProductForm(props) {
     
         if (props.product.id) {
             // update the product
-            fetch("http://localhost:3000/products/" + props.product.id, {
+            fetch("https://api-e-collectic.vercel.app/products/" + props.product.id, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",
@@ -152,7 +152,7 @@ function ProductForm(props) {
         
             // create a new product
             product.createdAt = new Date().toISOString().slice(0, 10);
-            fetch("http://localhost:3000/products", {
+            fetch("https://api-e-collectic.vercel.app/products", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
