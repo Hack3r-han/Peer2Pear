@@ -1,6 +1,30 @@
 {
   "products": [
     {
+      "id": 1,
+      "title": "Cowboy Boots",
+      "description": "Pair these outlaw boots with your favorite jeans, a worn-in hat, and a leather jacket for an ensemble that exudes Western charisma. Whether you're in a honky-tonk or blazing your own trail, these boots are your partner in crime. Size 9.",
+      "price": 35,
+      "img": "https://img.freepik.com/free-photo/cowboy-inspiration-with-boots-chair_23-2149484732.jpg?w=826&t=st=1705568555~exp=1705569155~hmac=0b17fe38c210a44a615e6ca1529140efb1c3809681e7d1f7de7e1ae652c2544b",
+      "brand": "Tecovas"
+    },
+    {
+      "id": 2,
+      "title": "Woolen Jumper",
+      "description": "Cozy and stylish woolen jumper to keep you warm during chilly seasons. This garment seamlessly combines comfort and fashion, making it a must-have addition to your winter wardrobe. Size S.",
+      "price": 15,
+      "img": "https://img.freepik.com/premium-photo/sweater-isolated-white_87394-14018.jpg?w=900",
+      "brand": "UNIQLO"
+    },
+    {
+      "id": 3,
+      "title": "Watermelon Cooler",
+      "description": "Designed to keep the essence of summer always at your fingertips. This innovative fridge is not just a cooling appliance; it's a testament to convenience, ensuring that the crisp, refreshing taste of chilled watermelon is available whenever and wherever you desire.",
+      "price": 20,
+      "img": "https://i.gzn.jp/img/2010/07/29/marugoto_tamachan/P1210050.jpg",
+      "brand": "Dyson"
+    },
+    {
       "id": 4,
       "title": "One-Sheet Wonder",
       "description": "Introducing our revolutionary Quantum Absorbency Toilet Roll—an unparalleled breakthrough in bathroom innovation. With an extreme absorbing power that defies expectations, this toilet roll is engineered to redefine your bathroom experience.",
@@ -42,7 +66,7 @@
     },
     {
       "id": 9,
-      "title": " Socks",
+      "title": "Fried Confidence Socks",
       "description": "Step confidently into a world of self-assured style with these socks. Forget about walking on eggshells and embrace every step with boldness. Crafted for those who exude confidence, these socks boast a fried egg design.",
       "price": 8,
       "img": "https://thelagaadi.com/cdn/shop/collections/long_socks-2x3_copy_982b4e38-6e3c-439c-b25a-9f1e48540a17.jpg?v=1695974128&width=1080",
@@ -77,7 +101,7 @@
       "title": "Handy Tongs",
       "description": "Ever feel like you need an extra pair of hands in the kitchen? Say goodbye to ordinary tongs. These tongs feature miniature hands at the tips, ready to assist you in flipping pancakes, serving salads, or grasping hot items from the grill.",
       "price": 10,
-      "img": "https://i.etsystatic.com/20074123/r/il/c1c1b5/4849478532/il_1588xN.4849478532_nrwc.jpg",
+      "img": "https://ae01.alicdn.com/kf/Hc065cc9183504ab591906a3504f7b164R.jpg_640x640Q90.jpg_.webp",
       "brand": "IKEA"
     },
     {
